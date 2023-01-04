@@ -1,3 +1,4 @@
+import ast
 import requests
 from urllib.parse import urlencode
 from pyquery import PyQuery as pq
@@ -62,7 +63,7 @@ def crapy(value):
     for decontent in content:
         dic = {}
         print(decontent)
-        dic.update(eval(decontent))
+        dic.update(ast.literal_eval(decontent))
         f.close()
         f = open("output.txt","w")
         f.write("")
